@@ -1,0 +1,33 @@
+{
+  "name": "grunt-thin-aws",
+  "version": "0.0.0",
+  "description": "AWS SDK Wrapper for grunt task",
+  "main": "src/aws.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-kinzal/grunt-thin-aws.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "aws"
+  ],
+  "author": "k-kinzal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k-kinzal/grunt-thin-aws/issues"
+  },
+  "homepage": "https://github.com/k-kinzal/grunt-thin-aws",
+  "dependencies": {
+    "aws": "0.0.3-2",
+    "aws-sdk": "^2.1.21",
+    "bluebird": "^2.9.24"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.1",
+    "jshint-stylish": "^1.0.1"
+  }
+}
