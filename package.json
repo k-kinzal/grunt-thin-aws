@@ -1,8 +1,8 @@
 {
   "name": "grunt-thin-aws",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "AWS SDK Wrapper for grunt task",
-  "main": "src/aws.js",
+  "main": "tasks/aws.js",
   "scripts": {
     "test": "grunt test"
   },
