@@ -2,13 +2,7 @@
 // require
 var AWS     = require('aws-sdk');
 var Promise = require('bluebird');
-/*
- * grunt-thin-aws
- * https://github.com/k-kinzal/grunt-thin-aws
- *
- * Copyright (c) 2012-2015 k-kinzal
- * Licensed under the MIT license.
- */
+
 module.exports = function (grunt) {
   // register tasks
   grunt.registerMultiTask('aws', 'execute function of aws-sdk', function () {
@@ -22,8 +16,8 @@ module.exports = function (grunt) {
       done(false);
       return;
     }
-    var service = Promise.promisifyAll(new Service());
-    var action  = service[options.action + 'Async'];
+    var service = Promise.promisifyAll(new Service(), 'Promise');
+    var action  = service[options.action + 'Promise'];
     if (!action) {
       grunt.log.error('Not found action `' + options.action + '` in `' + options.service + '`');
       done(false);
