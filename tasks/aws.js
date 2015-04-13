@@ -16,7 +16,7 @@ module.exports = function (grunt) {
       done(false);
       return;
     }
-    var service = Promise.promisifyAll(new Service(), 'Promise');
+    var service = Promise.promisifyAll(new Service(), {suffix: 'Promise'});
     var action  = service[options.action + 'Promise'];
     if (!action) {
       grunt.log.error('Not found action `' + options.action + '` in `' + options.service + '`');
