@@ -34,14 +34,14 @@ module.exports = function (grunt) {
     (function retry() {
       action.call(service, params).then(function(data) {
         if (!!successCallback) {
-          successCallback(data, done, retry);
+          successCallback(data, done, function() { setTimeout(retry, options.retryInterval || 1000); });
         } else {
           done();
         }
 
       }).catch(function(err) {
         if (!!errorCallback) {
-          errorCallback(err, done, retry);
+          errorCallback(err, done, { setTimeout(retry, options.retryInterval || 1000); });
         } else {
           grunt.log.error(err);
           done(false);
