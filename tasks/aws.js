@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 
       }).catch(function(err) {
         if (!!errorCallback) {
-          errorCallback(err, done, { setTimeout(retry, options.retryInterval || 1000); });
+          errorCallback(err, done, function() { setTimeout(retry, options.retryInterval || 1000); });
         } else {
           grunt.log.error(err);
           done(false);
